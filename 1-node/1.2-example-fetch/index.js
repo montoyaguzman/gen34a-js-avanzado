@@ -1,0 +1,1 @@
+console.log('esto pasa en el index.js')
