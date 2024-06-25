@@ -1,0 +1,45 @@
+Desarrollo web
+El stack de tecnologias para que funcione un sistema web
+
+    Front end: Todo lo visual que ve el usuario
+        tecnologias: html, css, js
+
+    API: 
+        Servicio que nos da informacion
+        Puente entre front end y back end
+        Medio comunicacion
+        Deber ciertas reglas (CONTRATO) que el front cumple para poder utilizar, esas reglas las define la persona que crea el api o el backend
+
+    Para que?
+    Para interconectar sistemas mediante un medio uniforme, estandar y seguro.
+    Obtener y enviar informacion 
+
+    Back end: Es todo el funcionamiento interno y los datos del sistema
+        tecnologias: node (js), sql (bases de datos)
+        Base datos
+
+    
+EJEMPLO
+
+"Boletos para Bruno Mars..."
+
+PERSONA => NAVEGADOR (Chrome) => Modem => Central => Servidor 1 => Ticket Master (web) => Ticket master (API) => Ticket Master (base datos)
+
+Modelo cliente Servidor
+Es una abstraccion de la comunicacion (internet)
+    cliente: elemento que solicita informacion
+    servidor: es cualquier elemento que provee informacion
+
+Conceptos
+    client
+    server
+    http request / solicitud
+    http response / respuesta
+    api
+    contrato del api
+    formato en envio y recepcion (json)
+
+PANORAMA ACTUAL
+    soap y xml
+    API y json
+    graphql y json
