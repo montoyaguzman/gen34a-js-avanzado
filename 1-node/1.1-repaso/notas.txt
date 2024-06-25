@@ -1,0 +1,7 @@
+Repos Montoya 
+
+Intro a la web: https://github.com/montoyaguzman/gen28-intro-a-la-web
+Intro a JS: https://github.com/montoyaguzman/gen28-intro-js
+Computer Science: https://github.com/montoyaguzman/gen28-computer-science
+
+Drive katas: https://drive.google.com/drive/u/0/folders/1ioW9pgR71OIJTiLDrXqNv3XgPv9IulhQ
