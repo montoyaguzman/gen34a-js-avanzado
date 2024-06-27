@@ -13,10 +13,34 @@ const URL = 'https://pokeapi.co/api/v2/pokemon/';
 async function getData() {
     const response = await fetch(URL);
     const pokemons = await response.json();
-    console.log(response);
-    console.log(pokemons);
+    return pokemons;
+    // console.log(response);
+    // console.log(pokemons);
 }
 
-getData();
+function generateListElement(pokemons) {
+    //console.log('aqui', pokemons);
+    // for (let i = 0; i < pokemons.length; i++) {
+    //     console.log('name: ', pokemons[i].name);
+    // }
+
+
+    pokemons.forEach((element, iterador) => {
+        // console.log('name: ', element.name);
+        // console.log('iterador: ', iterador);
+        const liElement = document.createElement('li');
+        liElement.innerText = element.name
+        const ulElement = document.querySelector('ul');
+        ulElement.append(liElement);
+    });
+
+}
+
+async function main() {
+    const pokemons = await getData();
+    generateListElement(pokemons.results); // envio de parametros (argumentos)
+}
+
+main();
 
 
