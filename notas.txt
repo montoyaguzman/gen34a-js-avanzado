@@ -54,3 +54,7 @@ SERVIDOR
     Javascript + No
     Ejemplo: acceso al cpu (procesador), a crear archivo en la computadoras, etc.
     Funcionalidades utiles para quien back end
+
+PORTS, REDES, CONFIGURACION DE RED O DE computadoras
+    redes de computadores
+    sistemas operativos
