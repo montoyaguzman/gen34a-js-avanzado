@@ -43,3 +43,14 @@ PANORAMA ACTUAL
     soap y xml
     API y json
     graphql y json
+
+
+NAVEGADOR
+Javascript + Web API (conjunto de funcionalidades que da el navegador al lenguajes)
+    Ejemplo: addEventListener, localstorage
+    Funcionalidades utiles para el front end
+
+SERVIDOR 
+    Javascript + No
+    Ejemplo: acceso al cpu (procesador), a crear archivo en la computadoras, etc.
+    Funcionalidades utiles para quien back end
