@@ -40,6 +40,8 @@ const server = http.createServer((request, response) => {
         // reto: desarrollar este codigo
     }
 
+    // try catch
+
     const stringObject = JSON.stringify(responseObject);
 
     response.writeHead(status, mimeType)
