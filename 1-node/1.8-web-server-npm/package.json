@@ -1,0 +1,16 @@
+{
+  "name": "web-server-npm",
+  "version": "1.0.0",
+  "description": "servidor de paginas web",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "montoyag-devf",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "nodemon": "^3.1.4"
+  }
+}
