@@ -1,5 +1,5 @@
 // URL 1 localhost:8080 => index.html
-// URL 2 localhost:8080/patito.html => pagina1.html
+// URL 2 localhost:8080/pagina1.html => pagina1.html
 // URL 3 localhost:8080/pagina2.html => pagina2.html
 const http = require('http');
 const url = require('url');
@@ -25,6 +25,23 @@ const server = http.createServer((request, response) => {
     fs.stat(fileSystemPath, (error) => {
         if (!error) {
             // acceder y regresar la pagina que este invocando con fileSystemPath
+
+            fs.readFile(fileSystemPath, (error, file) => {
+                if (!error) {
+                    const status = 200;
+                    const mimeTypes = { 'Content-type': 'text/html' };
+                    response.writeHead(status, mimeTypes);
+                    response.write(file);
+                    response.end();
+                } else {
+                    const status = 500;
+                    const mimeTypes = { 'Content-type': 'text/plain' };
+                    response.writeHead(status, mimeTypes);
+                    response.write('Error de lectura del archivo');
+                    response.end();
+                }
+            });
+
         } else {
             // si ese fileSystemPath no existe devolver una respuesta 404
             const status = 404;
