@@ -62,8 +62,10 @@ PORTS, REDES, CONFIGURACION DE RED O DE computadoras
 COMANDOS NPM
 npm init 
 npm i nodemon
+npm i nodemon -g
 npm install colors
 npm i
+npm i nodemon -D
 
 dependencias
 Son todas las librerias que requiere o utiliza nuestro proyecto para funcionar

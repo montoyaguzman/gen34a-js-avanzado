@@ -1,0 +1,26 @@
+NUMEROS DECIMALES
+9
+10
+99
+100
+
+
+Bootstrap
+1.0.0 
+    warning: #ffffff
+1.0.1
+    primary button no se puede en opera, pero si ve en chrome, mozilla y safari
+1.0.2
+    boostrat desea agregar 2 nuevos tipos de menu que son tendencia en ux/ui en 2024
+1.1.0
+    boostart deja de usar webkits
+2.0.0
+    el menu de bootstrap no se abre si se usa foreach pero si con for
+2.0.1
+    se necesita corregir los bordes de los botones
+2.0.2
+    se necesitan 10 nuevos colores
+2.1.0
+
+    lalalalallala
+3.0.0

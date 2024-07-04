@@ -1,0 +1,23 @@
+Ejercicio 1: GTA (San andreas)
+    3.0.0
+        no se ven los coches mustang, solo se una marca negra
+    ???
+        el personaje de Juanito no se puede seleccionar
+    ??? 
+        agregar inclusividad/diversidad juanitx
+    
+    ??? 
+        la nueva temporada en linea no deja cobrar las recompensas
+    
+    ??? 
+        Las personas que jugaban GTA ya se lo han terminado y el publico quiere ver
+    escenarios, personajes y retos nuevos
+    
+    ??? 
+        En la nueva version de GTA se noto que era muy necesario agregar la conversion entre USD/EURO/MXN
+
+Ejercicio:
+Diferencia entre ^ (circunflejo) y  (tilde)
+"1.0.0" exactamente esa version
+"^1.0.0" cualquier version que sea compatible
+"~1.0.0" cualquier fix se puede instalar
