@@ -58,3 +58,19 @@ SERVIDOR
 PORTS, REDES, CONFIGURACION DE RED O DE computadoras
     redes de computadores
     sistemas operativos
+
+COMANDOS NPM
+npm init 
+npm i nodemon
+npm install colors
+npm i
+
+dependencias
+Son todas las librerias que requiere o utiliza nuestro proyecto para funcionar
+
+devDependencies
+Son aquellas librerias que el proyecto requiere o utiliza en ambiente desarrollo (en local)
+
+SEMVER (Semantic Version)
+Es un estandar basado x.y.z, para numerara las versiones de un software y cuidar
+la retrocompabilidad
