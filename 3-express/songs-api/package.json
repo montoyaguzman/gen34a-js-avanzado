@@ -1,0 +1,21 @@
+{
+  "name": "songs-api",
+  "version": "1.0.0",
+  "description": "proyecto de api fake de canciones",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js src/index.js",
+    "dev-w": ".\\node_modules\\nodemon\\bin\\nodemon.js src/index.js",
+    "nodemon": "nodemon src/index.js"
+  },
+  "author": "montoyita",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "nodemon": "^3.1.4"
+  }
+}
