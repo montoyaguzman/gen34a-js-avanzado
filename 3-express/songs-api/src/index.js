@@ -12,10 +12,10 @@ app.get('/hellow', (req, res) => {
 });
 
 const songs = [
-    { id: 1, name: 'Kilometros', artist: 'Los Caligaris' },
-    { id: 2, name: 'Closer', artist: 'The Chainsmokers' },
-    { id: 3, name: 'Solo a Terceros', artist: 'Panda' },
-    { id: 4, name: 'Danza Kuduro', artist: 'Don Omar' },
+    { id: 1, name: 'Kilometros', artist: 'Los Caligaris', album: '' },
+    { id: 2, name: 'Closer', artist: 'The Chainsmokers', album: '' },
+    { id: 3, name: 'Solo a Terceros', artist: 'Panda', album: '' },
+    { id: 4, name: 'Danza Kuduro', artist: 'Maria Becerra', album: 'https://i.scdn.co/image/ab67616d0000b273f414ba07ac47f093cad4d47d' },
 ];
 
 app.use(express.json());
@@ -44,12 +44,30 @@ app.post('/songs', (req, res) => {
     res.status(201).json({ message: 'eureka!', song: newSong });
 });
 
-// PATCH
+// PATCH: Modificaciones de algunas propiedades del objeto
+app.patch('/songs/:id', (req, res) => {
+    const id = req.params.id;
+    const newBody = req.body;
+    const positionFounded = songs.findIndex(element => element.id === parseInt(id));
+    // ... spread operator, se utiliza para hacer destructuring
+    const newSong = { ...songs[positionFounded], ...newBody };
+    songs[positionFounded] = newSong;
+    res.status(200).json({ id });
+});
 
-// PUT
+// PUT: Modificar todas las propiedades de un objeto
+app.put('/songs/:id', (req, res) => {
+    const id = req.params.id;
 
-// DELETE
+    res.status(200).json({ id });
+});
 
+// DELETE: Eliminar objeto
+app.delete('/songs/:id', (req, res) => {
+    const id = req.params.id;
+
+    res.status(200).json({ id });
+});
 
 
 app.listen(port, () => {
