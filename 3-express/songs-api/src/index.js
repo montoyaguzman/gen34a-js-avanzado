@@ -18,11 +18,21 @@ const songs = [
     { id: 4, name: 'Danza Kuduro', artist: 'Don Omar' },
 ];
 
+app.use(express.json());
+
 // GET: Obtener todas las canciones
 app.get('/songs', (req, res) => {
     res.json(songs);
 });
 
+// POST: Crear una nueva cancion favorita
+app.post('/songs', (req, res) => {
+    // console.log('req: ', req);
+    // console.log('req.body: ', req.body);
+    const newSong = req.body;
+    songs.push(newSong);
+    res.status(201).json({ message: 'eureka!', song: newSong });
+});
 
 
 app.listen(port, () => {
