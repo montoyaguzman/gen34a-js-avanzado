@@ -25,6 +25,16 @@ app.get('/songs', (req, res) => {
     res.json(songs);
 });
 
+// GET: Obtener una cancion en especifico
+// request params: parametros que se mandan en la url y se utilizan para selecionar recursos. Enmedio de la url. Ejemplo: api/pokemon/125/algo
+// quey params: son parametros que se utilizar como parametro para filtrar informacion. Ejemplo: api/pokemon?page=1&tamanio=100
+app.get('/songs/:id', (req, res) => {
+    const id = req.params.id;
+    console.log('req.query.page: ', req.query.page);
+    const songFounded = songs.find(element => element.id === parseInt(id));
+    res.json(songFounded);
+});
+
 // POST: Crear una nueva cancion favorita
 app.post('/songs', (req, res) => {
     // console.log('req: ', req);
@@ -33,6 +43,13 @@ app.post('/songs', (req, res) => {
     songs.push(newSong);
     res.status(201).json({ message: 'eureka!', song: newSong });
 });
+
+// PATCH
+
+// PUT
+
+// DELETE
+
 
 
 app.listen(port, () => {
