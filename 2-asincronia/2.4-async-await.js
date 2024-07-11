@@ -10,16 +10,16 @@ const isOkPromise = () => {
         setTimeout(() => {
             console.log('2 validando el pago...');
             // if status === 200
-            // resolve();
+            resolve();
             // if status === 409
-            reject('no se pudo validar la tarjeta');
+            // reject('no se pudo validar la tarjeta');
         }, 0);
     });
 
 }
 
 async function main() {
-    console.log(' ======== BLOQUE 4 ========');
+    console.log(' ======== BLOQUE 5 ========');
     console.log('1 Dar click en pagar!!');
 
     try {
@@ -30,7 +30,7 @@ async function main() {
         console.log('4 arrepentimiento....');
         console.log('5 llego el producto..');
     } catch (e) {
-        console.log('error: ', e)
+        console.log('error: ', e);
     }
 
 }
