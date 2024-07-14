@@ -1,0 +1,20 @@
+FORMAS DE LAS FUNCIONES FLECHA
+
+1. La forma tradicional, se tienen parentesis para los parametros llaves
+para el cuerpo de la funcion.
+
+(param1, param2, paramN) => {
+    // sentences
+}
+
+
+2. Cuando solo se requiere un parametro de entrada, no es necesario poner parentesis
+
+element => {
+    // sentences
+}
+
+
+3. Cuando solo se requiere retornar un valor, se omiten la llaves para el cuerpo y en una sola linea se pone
+aquello que se requiere retornar
+element => element.name

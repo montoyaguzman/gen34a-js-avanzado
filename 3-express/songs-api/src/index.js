@@ -58,17 +58,19 @@ app.patch('/songs/:id', (req, res) => {
 // PUT: Modificar todas las propiedades de un objeto
 app.put('/songs/:id', (req, res) => {
     const id = req.params.id;
-
+    const newBody = req.body;
+    const foundedPosition = songs.findIndex(element => element.id === parseInt(id));
+    songs[foundedPosition] = newBody;
     res.status(200).json({ id });
 });
 
 // DELETE: Eliminar objeto
 app.delete('/songs/:id', (req, res) => {
     const id = req.params.id;
-
+    const foundedPosition = songs.findIndex(element => element.id === parseInt(id));
+    songs.splice(foundedPosition, 1);
     res.status(200).json({ id });
 });
-
 
 app.listen(port, () => {
     console.log(`servidor iniciado... en el puerto ${port}`.rainbow);
