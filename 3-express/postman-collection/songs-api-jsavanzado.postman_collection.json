@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/songs",
+					"raw": "http://localhost:3000/songs?name=Solo",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -20,6 +20,12 @@
 					"port": "3000",
 					"path": [
 						"songs"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Solo"
+						}
 					]
 				}
 			},
@@ -43,13 +49,13 @@
 					],
 					"query": [
 						{
-							"key": "page",
-							"value": "450"
-						},
-						{
 							"key": "algo",
 							"value": "asasa",
 							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "450"
 						}
 					]
 				}
@@ -63,7 +69,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": 5,\n    \"name\": \"Believer\",\n    \"artist\": \"Imagine Dragons\"\n}",
+					"raw": "{\n    \"name\": \"Believer\",\n    \"artist\": \"Imagine Dragons\",\n    \"link\": \"www.com.com\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -85,13 +91,13 @@
 			"response": []
 		},
 		{
-			"name": "modifySong",
+			"name": "modifySong-all-fields",
 			"request": {
-				"method": "PATCH",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Los malaventurados no lloran\"\n}",
+					"raw": "{\n    \"id\": 99,\n    \"name\": \"I love it\",\n    \"artist\": \"Icona Pop\",\n    \"album\": \"\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,7 +105,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/songs/3",
+					"raw": "http://localhost:3000/songs/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -107,7 +113,34 @@
 					"port": "3000",
 					"path": [
 						"songs",
-						"3"
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteSong",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/songs/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"songs",
+						"4"
+					],
+					"query": [
+						{
+							"key": "algo",
+							"value": "asasa",
+							"disabled": true
+						}
 					]
 				}
 			},
