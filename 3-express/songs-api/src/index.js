@@ -1,5 +1,9 @@
+//  CORS
+// https://dev.to/speaklouder/how-to-configure-cors-in-nodejs-with-express-11h
+
 const express = require('express');
 const colors = require('colors');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
@@ -18,6 +22,13 @@ const songs = [
     { id: 4, name: 'Danza Kuduro', artist: 'Maria Becerra', album: 'https://i.scdn.co/image/ab67616d0000b273f414ba07ac47f093cad4d47d' },
 ];
 
+const corsOptions = {
+    origin: 'http://127.0.0.1:5500',
+    optionsSuccessStatus: 200,
+};
+
+app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // GET: Obtener todas las canciones
