@@ -1,5 +1,7 @@
+const formElement = document.querySelector('#songForm');
+const url = 'http://localhost:3000/songs';
+
 const getSongs = async () => {
-    const url = 'http://localhost:3000/songs';
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -14,6 +16,30 @@ const getSongs = async () => {
     }
 };
 
+const createSong = async (song) => {
+    console.log(song);
+    try {
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(song),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+    } catch (error) {
+        console.error(error.message);
+    }
+
+
+};
+
 const generateSongsView = (songsArray) => {
     //(songsArray[i], i)
     songsArray.forEach((element, index) => {
@@ -26,6 +52,22 @@ const generateSongsView = (songsArray) => {
 
     });
 };
+
+formElement.addEventListener('submit', (event) => {
+    // console.log(event); // todas las propiedas de la web api que tiene ese evento
+    // console.log(event.target); // el elemento html que lanza el evento
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    const song = formData.get('songName');
+    const artist = formData.get('artist');
+    const link = formData.get('imageLink');
+
+    const body = { name: song, artist: artist, album: link };
+    createSong(body);
+
+});
 
 const main = async () => {
     const songs = await getSongs();
