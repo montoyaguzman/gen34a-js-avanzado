@@ -50,7 +50,7 @@ app.get('/songs/:id', (req, res) => {
 app.post('/songs', (req, res) => {
     // console.log('req: ', req);
     // console.log('req.body: ', req.body);
-    const newSong = req.body;
+    const newSong = { ...req.body, id: songs.length + 1 };
     songs.push(newSong);
     res.status(201).json({ message: 'eureka!', song: newSong });
 });

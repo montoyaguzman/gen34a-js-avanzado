@@ -31,6 +31,8 @@ const createSong = async (song) => {
         const response = await fetch(url, options);
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
+        } else {
+            getData();
         }
 
     } catch (error) {
@@ -41,11 +43,13 @@ const createSong = async (song) => {
 };
 
 const generateSongsView = (songsArray) => {
+
+    const ulElement = document.querySelector('ul');
+    ulElement.innerHTML = '';
+
     //(songsArray[i], i)
     songsArray.forEach((element, index) => {
         // console.log(`cancion[${index}]: ${element.name} - ${element.artist}`); // cancion [0]: la camisa negra - juanes
-
-        const ulElement = document.querySelector('ul');
         const liElement = document.createElement('li');
         liElement.innerText = `${element.name} - ${element.artist}`;
         ulElement.append(liElement);
@@ -69,9 +73,9 @@ formElement.addEventListener('submit', (event) => {
 
 });
 
-const main = async () => {
+const getData = async () => {
     const songs = await getSongs();
     generateSongsView(songs);
 };
 
-main();
+getData();
