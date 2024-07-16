@@ -17,7 +17,6 @@ const getSongs = async () => {
 };
 
 const createSong = async (song) => {
-    console.log(song);
     try {
 
         const options = {
@@ -38,8 +37,6 @@ const createSong = async (song) => {
     } catch (error) {
         console.error(error.message);
     }
-
-
 };
 
 const generateSongsView = (songsArray) => {
@@ -55,6 +52,7 @@ const generateSongsView = (songsArray) => {
         ulElement.append(liElement);
 
     });
+
 };
 
 formElement.addEventListener('submit', (event) => {
