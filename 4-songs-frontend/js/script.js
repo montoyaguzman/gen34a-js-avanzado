@@ -7,15 +7,29 @@ const getSongs = async () => {
         }
 
         const songs = await response.json();
-        console.log(`Lista de canciones: ${songs}`);
+        return songs;
 
     } catch (error) {
         console.error(error.message);
     }
 };
 
-getSongs();
+const generateSongsView = (songsArray) => {
+    //(songsArray[i], i)
+    songsArray.forEach((element, index) => {
+        // console.log(`cancion[${index}]: ${element.name} - ${element.artist}`); // cancion [0]: la camisa negra - juanes
 
-const generateSongsView = () => {
+        const ulElement = document.querySelector('ul');
+        const liElement = document.createElement('li');
+        liElement.innerText = `${element.name} - ${element.artist}`;
+        ulElement.append(liElement);
 
+    });
 };
+
+const main = async () => {
+    const songs = await getSongs();
+    generateSongsView(songs);
+};
+
+main();
