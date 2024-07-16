@@ -1,9 +1,14 @@
-const formElement = document.querySelector('#songForm');
+const registerFormElement = document.querySelector('#songForm');
+const searchFormElement = document.querySelector('#searchForm');
+
 const url = 'http://localhost:3000/songs';
 
-const getSongs = async () => {
+const getSongs = async (nameSearched) => {
+
+    const newUrl = !nameSearched ? url : `${url}?name=${nameSearched}`;
+
     try {
-        const response = await fetch(url);
+        const response = await fetch(newUrl);
         if (!response.ok) {
             throw new Error(`Response status: ${response.status}`);
         }
@@ -55,7 +60,7 @@ const generateSongsView = (songsArray) => {
 
 };
 
-formElement.addEventListener('submit', (event) => {
+registerFormElement.addEventListener('submit', (event) => {
     // console.log(event); // todas las propiedas de la web api que tiene ese evento
     // console.log(event.target); // el elemento html que lanza el evento
     event.preventDefault();
@@ -71,8 +76,14 @@ formElement.addEventListener('submit', (event) => {
 
 });
 
-const getData = async () => {
-    const songs = await getSongs();
+searchFormElement.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const nameSearched = document.querySelector('#nameSearched').value;
+    getData(nameSearched);
+});
+
+const getData = async (nameSearched) => {
+    const songs = await getSongs(nameSearched);
     generateSongsView(songs);
 };
 

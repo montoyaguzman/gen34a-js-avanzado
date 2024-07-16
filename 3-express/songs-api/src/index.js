@@ -19,7 +19,9 @@ const songs = [
     { id: 1, name: 'Kilometros', artist: 'Los Caligaris', album: '' },
     { id: 2, name: 'Closer', artist: 'The Chainsmokers', album: '' },
     { id: 3, name: 'Solo a Terceros', artist: 'Panda', album: '' },
+    { id: 4, name: 'Solo a Terceros 2', artist: 'Panda', album: '' },
     { id: 4, name: 'Danza Kuduro', artist: 'Maria Becerra', album: 'https://i.scdn.co/image/ab67616d0000b273f414ba07ac47f093cad4d47d' },
+    { id: 6, name: 'Piensa solo en ti', artist: 'Panda', album: '' },
 ];
 
 const corsOptions = {
@@ -31,7 +33,18 @@ app.use(express.json());
 
 // GET: Obtener todas las canciones
 app.get('/songs', (req, res) => {
-    res.json(songs);
+
+    const name = req.query.name;
+
+    if (!name) {
+        res.json(songs);
+    }
+
+    const filteredSongsByName = songs.filter((song) => {
+        return song.name.toLocaleLowerCase().includes(name.toLocaleLowerCase())
+    });
+
+    res.json(filteredSongsByName);
 });
 
 // GET: Obtener una cancion en especifico
